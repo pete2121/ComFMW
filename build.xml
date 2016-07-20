@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Comission">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse-dsl-mars-R-win32-x86_64/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Comission.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/apache-mime4j-0.6.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/bsh-1.3.0.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-codec-1.10.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-collections-3.2.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-exec-1.3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-io-2.4.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-lang3-3.4.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/commons-logging-1.1.3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/cssparser-0.9.16.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/gson-2.3.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/guava-18.0.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/hamcrest-library-1.3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/htmlunit-2.17.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/htmlunit-core-js-2.17.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/httpclient-4.4.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/httpcore-4.4.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/httpmime-4.4.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/jcommander-1.29.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/jetty-io-9.2.11.v20150529.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/jetty-util-9.2.11.v20150529.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/jna-4.1.0.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/jna-platform-4.1.0.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/junit-4.12.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/nekohtml-1.9.22.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/netty-3.5.7.Final.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/phantomjsdriver-1.2.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/sac-1.3.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/serializer-2.7.2.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/testng-6.8.5.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/websocket-api-9.2.11.v20150529.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/websocket-client-9.2.11.v20150529.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/websocket-common-9.2.11.v20150529.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/xalan-2.7.2.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/xercesImpl-2.11.0.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/libs/xml-apis-1.4.01.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/selenium-java-2.47.1.jar"/>
+        <pathelement location="../../../../Selenium/selenium-2.47.1/selenium-java-2.47.1-srcs.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.useq"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Comission.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
